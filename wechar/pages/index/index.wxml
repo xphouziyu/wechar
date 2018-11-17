@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class='mcg-box'>
+  <!--留言区域-->
+  <view class='send-box'>
+    <input bindinput='changeInputVal' value='{{inputVal}}' class='input' type='text' placeholder='请留言...' placeholder-class='place-input'/>
+    <button size='mini' type='primary' bindtap='addMcg'>添加</button>
+  </view>
+  <text class='close-info' wx:if='{{mcgData.length==0}}'>暂时没有留言。。。</text>
+  <!--留言列表-->
+  <view class='list-view'>
+    <view class='item' wx:for="{{mcgData}}">
+      <text>{{item.mcg}}</text>
+      <!-- <button plain size='mini'>删除</button> -->
+      <icon data-index='{{index}}' bindtap='delMcg' type='cancel'></icon>
+    </view>
+  </view>
+</view>
